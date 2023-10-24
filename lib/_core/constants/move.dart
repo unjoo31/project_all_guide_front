@@ -1,16 +1,17 @@
+import 'package:flutter/material.dart';
+import 'package:project_all_guide_front/ui/pages/on_boarding/on_boarding_page.dart';
+import 'package:project_all_guide_front/ui/pages/splash/splash_page.dart';
+
 class Move {
+  static String splashPage = "/splash";
+  static String onBoardingPage = "/onBoarding";
   static String loginPage = "/login";
   static String joinPage = "/join";
-  static String postListPage = "/post/list";
-  static String postWritePage = "/post/write";
-  static String userInfoPage = "/user/info";
 }
 
-// Map<String, Widget Function(BuildContext)> getRouters() {
-//   return {
-//     Move.loginPage: (context) => const LoginPage(),
-//     Move.joinPage: (context) => const JoinPage(),
-//     Move.postListPage: (context) => PostListPage(),
-//     Move.postWritePage: (context) => const PostWritePage(),
-//   };
-// }
+Map<String, Widget Function(BuildContext)> getRouters() {
+  return {
+    Move.splashPage: (context) => const SplashPage(),
+    Move.onBoardingPage: (context) => const OnBoardingPage(),
+  };
+}

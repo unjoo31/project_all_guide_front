@@ -2,8 +2,9 @@ import 'dart:ui';
 
 // main color
 
-const Color kPrimaryColor = Color(0xFFFEEA61);
-const Color kPointColor = Color(0xFFA450F6);
+const Color kPrimaryColor = Color(0xFF0038FF);
+const Color kPointColor = Color(0xFF0038FF);
+const Color kUnPointColor = Color(0xFF979797);
 
 // font color
 const Color kFontBlack = Color(0xFF222222);

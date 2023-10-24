@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:project_all_guide_front/_core/constants/move.dart';
 
 import '_core/constants/theme.dart';
 
@@ -16,11 +17,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      navigatorKey:
-          navigatorKey, // context가 없는 곳에서 context를 사용할 수 있는 방법 (몰라도 됨)
       debugShowCheckedModeBanner: false,
-      //initialRoute: Move.loginPage,
-      //routes: getRouters(),
+      initialRoute: Move.splashPage,
+      routes: getRouters(),
       theme: theme(),
     );
   }
