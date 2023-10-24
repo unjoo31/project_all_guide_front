@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_all_guide_front/_core/constants/move.dart';
 
 import '../../components/box_color_button.dart';
 import '../../components/box_no_color_button.dart';
@@ -35,14 +36,18 @@ class OnBoardingBody extends StatelessWidget {
               ),
               BoxColorButton(
                 text: "회원가입",
-                press: () {},
+                press: () {
+                  Navigator.pushNamed(context, Move.joinPage);
+                },
               ),
               SizedBox(
                 height: 10,
               ),
               BoxNoColorButton(
                 text: "로그인",
-                press: () {},
+                press: () {
+                  Navigator.pushNamed(context, Move.loginPage);
+                },
               ),
             ],
           ),
