@@ -20,9 +20,9 @@ class BoxNoColorButton extends StatelessWidget {
           backgroundColor: color,
           padding: EdgeInsets.all(12),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12.0), // 조절 가능한 정도
+            borderRadius: BorderRadius.circular(15.0), // 조절 가능한 정도
           ),
-          elevation: 8,
+          elevation: 6,
         ),
         onPressed: press,
         child: Center(
