@@ -46,7 +46,7 @@ class SessionStore extends SessionUser {
     // 2. 비지니스 로직
     if (responseDTO.code == 1) {
       // 3. 페이지 이동
-      Navigator.pushNamed(mContext!, Move.joinPage);
+      Navigator.pushNamed(mContext!, Move.mainPage);
       // 1. 세션값 갱신 (로그인 했을 때 계속 사용할 것이기 때문)
       this.user = responseDTO.data as User; // map타입이면 안들어가짐(다운캐스팅해서 넣음)
       this.jwt = responseDTO.token;
