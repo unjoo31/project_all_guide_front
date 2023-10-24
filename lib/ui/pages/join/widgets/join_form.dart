@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../_core/constants/size.dart';
 import '../../../../_core/constants/theme.dart';
 import '../../../../_core/utils/validator_util.dart';
+import '../../../../data/dto/user_request.dart';
+import '../../../../data/store/session_store.dart';
 import '../../components/agree_check.dart';
 import '../../components/custom_auth_text_form_field.dart';
 import '../../components/custom_elavated_button.dart';
 
-class JoinForm extends StatelessWidget {
+class JoinForm extends ConsumerWidget {
   final _formKey = GlobalKey<FormState>();
-  final _username = TextEditingController();
+  final _email = TextEditingController();
   final _password = TextEditingController();
 
-  JoinForm({super.key});
+  JoinForm({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Form(
+      key: _formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -30,8 +34,8 @@ class JoinForm extends StatelessWidget {
           CustomAuthTextFormField(
             text: "이메일 주소를 입력해 주세요",
             obscureText: false,
-            funValidator: validateUsername(),
-            controller: _username,
+            funValidator: validateEmail(),
+            controller: _email,
           ),
           const SizedBox(height: gap_medium),
           CustomAuthTextFormField(
@@ -52,7 +56,11 @@ class JoinForm extends StatelessWidget {
           CustomElevatedButton(
             text: "회원가입",
             funPageRoute: () {
-              if (_formKey.currentState!.validate()) {}
+              if (_formKey.currentState!.validate()) {
+                JoinReqDTO joinReqDTO =
+                    JoinReqDTO(password: _password.text, email: _email.text);
+                ref.read(sessionProvider).join(joinReqDTO);
+              }
             },
           ),
         ],

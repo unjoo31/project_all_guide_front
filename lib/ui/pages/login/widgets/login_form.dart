@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:logger/logger.dart';
 
 import '../../../../_core/constants/colors.dart';
 import '../../../../_core/constants/size.dart';
 import '../../../../_core/constants/theme.dart';
 import '../../../../_core/utils/validator_util.dart';
+import '../../../../data/dto/user_request.dart';
+import '../../../../data/store/session_store.dart';
 import '../../components/custom_auth_text_form_field.dart';
 import '../../components/custom_elavated_button.dart';
 import '../../components/custom_elavated_icon_button.dart';
 
-class LoginForm extends StatelessWidget {
+class LoginForm extends ConsumerWidget {
   final _formKey = GlobalKey<FormState>();
-  final _username = TextEditingController();
+  final _email = TextEditingController();
   final _password = TextEditingController();
 
-  LoginForm({super.key});
+  LoginForm({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Form(
+      key: _formKey,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -31,8 +36,8 @@ class LoginForm extends StatelessWidget {
           CustomAuthTextFormField(
             text: "이메일 주소를 입력해 주세요",
             obscureText: false,
-            funValidator: validateUsername(),
-            controller: _username,
+            funValidator: validateEmail(),
+            controller: _email,
           ),
           const SizedBox(height: gap_medium),
           CustomAuthTextFormField(
@@ -45,7 +50,14 @@ class LoginForm extends StatelessWidget {
           CustomElevatedButton(
             text: "로그인",
             funPageRoute: () {
-              if (_formKey.currentState!.validate()) {}
+              if (_formKey.currentState!.validate()) {
+                Logger().d("_email ${_email}");
+                LoginReqDTO loginReqDTO =
+                    LoginReqDTO(email: _email.text, password: _password.text);
+                ref.read(sessionProvider).login(loginReqDTO);
+                Logger().d("_password ${_password}");
+                Logger().d("loginReqDTO ${loginReqDTO.email}");
+              }
             },
           ),
           const SizedBox(height: gap_large),
