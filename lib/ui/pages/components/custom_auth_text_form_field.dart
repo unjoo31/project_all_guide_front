@@ -25,37 +25,45 @@ class CustomAuthTextFormField extends StatelessWidget {
         const SizedBox(height: gap_small),
         SizedBox(
           height: 55,
-          child: TextFormField(
-            controller: controller,
-            validator: funValidator,
-            obscureText: obscureText,
-            decoration: InputDecoration(
-              hintText: "   $text",
-              hintStyle: TextStyle(color: kUnPointColor),
-              filled: true,
-              fillColor: Colors.grey.withOpacity(0.1),
-              enabledBorder: OutlineInputBorder(
-                // 3. 기본 TextFormField 디자인
-                borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide.none,
+          child: Stack(
+            alignment: Alignment.centerRight,
+            children: [
+              TextFormField(
+                controller: controller,
+                validator: funValidator,
+                obscureText: obscureText,
+                decoration: InputDecoration(
+                  hintText: "   $text",
+                  hintStyle: TextStyle(color: kUnPointColor),
+                  filled: true,
+                  fillColor: Colors.grey.withOpacity(0.1),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide.none,
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide.none,
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide.none,
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
               ),
-              focusedBorder: OutlineInputBorder(
-                // 4. 손가락 터치시 TextFormField 디자인
-                borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide.none,
-              ),
-              errorBorder: OutlineInputBorder(
-                // 5. 에러발생시 TextFormField 디자인
-                borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide.none,
-              ),
-              focusedErrorBorder: OutlineInputBorder(
-                // 5. 에러가 발생 후 손가락을 터치했을 때 TextFormField 디자인
-                borderRadius: BorderRadius.circular(20),
-                borderSide: BorderSide.none,
-              ),
-              errorStyle: TextStyle(color: kPrimaryColor),
-            ),
+              if (funValidator != null && funValidator("") != null)
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: Icon(
+                    Icons.error,
+                    color: kPrimaryColor,
+                  ),
+                ),
+            ],
           ),
         ),
       ],

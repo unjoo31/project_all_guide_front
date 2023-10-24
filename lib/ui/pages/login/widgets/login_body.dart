@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../_core/constants/move.dart';
 import '../../components/custom_logo.dart';
+import '../../components/custom_text_button.dart';
 import 'login_form.dart';
 
 class LoginBody extends StatelessWidget {
@@ -16,6 +18,13 @@ class LoginBody extends StatelessWidget {
           const CustomLogo(),
           const SizedBox(height: 60),
           LoginForm(),
+          const SizedBox(height: 20),
+          CustomTextButton(
+            "회원가입 페이지로 이동",
+            () {
+              Navigator.pushNamed(context, Move.joinPage);
+            },
+          ),
         ],
       ),
     );
