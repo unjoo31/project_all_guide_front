@@ -32,7 +32,7 @@ class OnBoardingBody extends StatelessWidget {
                 child: OnBoardingItem(),
               ),
               SizedBox(
-                height: 50,
+                height: 80,
               ),
               BoxColorButton(
                 text: "회원가입",
