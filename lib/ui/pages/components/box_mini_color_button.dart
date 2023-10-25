@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../../../_core/constants/colors.dart';
 
-class BoxColorButton extends StatelessWidget {
+class BoxMiniColorButton extends StatelessWidget {
   final String? text;
   final GestureTapCallback? press;
   final Color color;
 
-  const BoxColorButton(
+  const BoxMiniColorButton(
       {Key? key, this.text, this.press, this.color = kPrimaryColor})
       : super(key: key);
 
@@ -29,7 +29,7 @@ class BoxColorButton extends StatelessWidget {
           child: Text(
             text ?? "",
             style: TextStyle(
-                fontSize: 16, color: kBackWhite, fontWeight: FontWeight.bold),
+                fontSize: 13, color: kBackWhite, fontWeight: FontWeight.bold),
           ),
         ),
       ),
