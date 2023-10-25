@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../data/model/nav_item.dart';
+import '../../../data/model/nav_item_on.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
   final int selectedIndex;
@@ -26,7 +27,9 @@ class CustomBottomNavigationBar extends StatelessWidget {
           ),
         ],
         borderRadius: BorderRadius.vertical(
-            top: Radius.circular(20.0), bottom: Radius.circular(20.0)),
+          top: Radius.circular(20.0),
+          bottom: Radius.circular(20.0),
+        ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -38,7 +41,9 @@ class CustomBottomNavigationBar extends StatelessWidget {
             child: IconButton(
               onPressed: () => onTapped(index),
               icon: Image.asset(
-                navItems[index].icon ?? "assets/star.svg",
+                index == selectedIndex
+                    ? navItemsOn[index].icon
+                    : navItems[index].icon,
               ),
             ),
           ),

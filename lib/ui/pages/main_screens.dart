@@ -22,7 +22,7 @@ class _MainScreensState extends State<MainScreens> {
       body: IndexedStack(
         index: _selectedIndex,
         children: [
-          HomePage(),
+          HomePage(), // 수정된 부분
           AllGuidePage(),
           WhoGuidePage(),
           WhereGuidePage(),
@@ -33,13 +33,13 @@ class _MainScreensState extends State<MainScreens> {
         padding: const EdgeInsets.all(16.0),
         child: CustomBottomNavigationBar(
           selectedIndex: _selectedIndex,
-          onTapped: onTaped,
+          onTapped: onTapped,
         ),
       ),
     );
   }
 
-  void onTaped(index) {
+  void onTapped(index) {
     setState(() {
       _selectedIndex = index;
     });

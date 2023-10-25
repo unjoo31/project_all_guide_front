@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:project_all_guide_front/ui/pages/all_guide/all_guide_page.dart';
-import 'package:project_all_guide_front/ui/pages/home/home_page.dart';
 import 'package:project_all_guide_front/ui/pages/join/join_page.dart';
 import 'package:project_all_guide_front/ui/pages/login/login_page.dart';
 import 'package:project_all_guide_front/ui/pages/main_screens.dart';
@@ -30,7 +29,7 @@ Map<String, Widget Function(BuildContext)> getRouters() {
     Move.loginPage: (context) => const LoginPage(),
     Move.joinPage: (context) => const JoinPage(),
     Move.mainPage: (context) => const MainScreens(),
-    Move.homePage: (context) => const HomePage(),
+    //Move.homePage: (context) => HomePage(),
     Move.myPage: (context) => const MyPage(),
     Move.allGuidePage: (context) => const AllGuidePage(),
     Move.whereGuidePage: (context) => const WhereGuidePage(),
