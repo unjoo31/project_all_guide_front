@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class IconButtonOff extends StatelessWidget {
+import '../../../_core/constants/colors.dart';
+
+class IconButtonOff extends StatefulWidget {
   final String? imgPath;
   final GestureTapCallback? onPressed;
 
@@ -12,11 +14,29 @@ class IconButtonOff extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  _IconButtonOffState createState() => _IconButtonOffState();
+}
+
+class _IconButtonOffState extends State<IconButtonOff> {
+  Color iconColor = kUnPointColor;
+
+  @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: onPressed,
+      onPressed: () {
+        setState(() {
+          iconColor = kPrimaryColor;
+        });
+
+        if (widget.onPressed != null) {
+          widget.onPressed!();
+        }
+      },
       icon: SvgPicture.asset(
-        imgPath ?? "assets/bookmark.svg",
+        widget.imgPath ?? "assets/bookmark.svg",
+        color: iconColor,
+        width: 20,
+        height: 20,
       ),
     );
   }

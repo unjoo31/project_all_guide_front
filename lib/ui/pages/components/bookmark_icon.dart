@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class BookmarkIcon extends StatelessWidget {
+import '../../../_core/constants/colors.dart';
+
+class BookmarkIcon extends StatefulWidget {
   final String? imgPath;
   final GestureTapCallback? onPressed;
 
@@ -12,6 +14,25 @@ class BookmarkIcon extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  _BookmarkIconState createState() => _BookmarkIconState();
+}
+
+class _BookmarkIconState extends State<BookmarkIcon> {
+  Color containerColor = Colors.white;
+  Color iconColor = kUnPointColor;
+
+  void handleIconPress() {
+    setState(() {
+      containerColor = kPrimaryColor;
+      iconColor = Colors.white;
+    });
+
+    if (widget.onPressed != null) {
+      widget.onPressed!();
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
@@ -20,7 +41,7 @@ class BookmarkIcon extends StatelessWidget {
           width: 45,
           height: 45,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: containerColor,
             borderRadius: BorderRadius.circular(25),
             boxShadow: [
               BoxShadow(
@@ -34,9 +55,10 @@ class BookmarkIcon extends StatelessWidget {
         ),
         Positioned(
           child: IconButton(
-            onPressed: onPressed,
+            onPressed: handleIconPress,
             icon: SvgPicture.asset(
-              imgPath ?? "assets/bookmark.svg",
+              widget.imgPath ?? "assets/bookmark.svg",
+              color: iconColor,
             ),
           ),
         ),
