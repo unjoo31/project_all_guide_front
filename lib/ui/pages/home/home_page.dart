@@ -51,8 +51,8 @@ class _HomePageState extends State<HomePage>
         controller: _tabController,
         children: [
           AllGuideList(),
-          WhereGuideList(),
           WhoGuideList(),
+          WhereGuideList(),
         ],
       ),
     );
