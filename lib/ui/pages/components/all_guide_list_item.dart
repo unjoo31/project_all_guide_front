@@ -46,11 +46,18 @@ class AllGuideListItem extends StatelessWidget {
                 ),
                 child: Column(
                   children: [
-                    SizedBox(
-                      width: 310,
-                      height: 200,
-                      child: Container(
-                        child: Image.asset("assets/${picUrl}"),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 8),
+                      child: SizedBox(
+                        width: 310,
+                        height: 200,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.vertical(
+                            top: Radius.circular(30.0),
+                            bottom: Radius.circular(30.0),
+                          ),
+                          child: Image.asset("assets/${picUrl}"),
+                        ),
                       ),
                     ),
                     Padding(
