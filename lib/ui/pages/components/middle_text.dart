@@ -11,7 +11,7 @@ class MiddleText extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 10),
       child: SizedBox(
-        height: 30,
+        height: 20,
         child: Text(
           "${text}",
           style: textTheme().displayMedium,
