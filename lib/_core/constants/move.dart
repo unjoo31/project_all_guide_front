@@ -9,6 +9,9 @@ import 'package:project_all_guide_front/ui/pages/splash/splash_page.dart';
 import 'package:project_all_guide_front/ui/pages/where_guide/where_guide_page.dart';
 import 'package:project_all_guide_front/ui/pages/who_guide/who_guide_page.dart';
 
+import '../../ui/pages/all_guide/widgets/recommend_guide_form.dart';
+import '../../ui/pages/all_guide/widgets/relation_guide_form.dart';
+
 class Move {
   static String splashPage = "/splash";
   static String onBoardingPage = "/onBoarding";
@@ -20,6 +23,8 @@ class Move {
   static String allGuidePage = "/allGuide";
   static String whereGuidePage = "/whereGuide";
   static String whoGuidePage = "/whoGuide";
+  static String recommendGuidePage = "/recommendGuide";
+  static String relationGuidePage = "/relationGuidePage";
 }
 
 Map<String, Widget Function(BuildContext)> getRouters() {
@@ -34,5 +39,7 @@ Map<String, Widget Function(BuildContext)> getRouters() {
     Move.allGuidePage: (context) => const AllGuidePage(),
     Move.whereGuidePage: (context) => const WhereGuidePage(),
     Move.whoGuidePage: (context) => const WhoGuidePage(),
+    Move.recommendGuidePage: (context) => const ReccommendGuideForm(),
+    Move.relationGuidePage: (context) => const RelationGuideForm(),
   };
 }
