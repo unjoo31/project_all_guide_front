@@ -25,7 +25,7 @@ class ResultKeywordList extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(20),
             ),
-            elevation: 5,
+            elevation: 6,
           ),
         );
       }),

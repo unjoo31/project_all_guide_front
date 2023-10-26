@@ -4,6 +4,7 @@ import 'package:project_all_guide_front/ui/pages/all_guide/widgets/result_keywor
 import 'package:project_all_guide_front/ui/pages/all_guide/widgets/result_list.dart';
 
 import '../../../../data/model/all_guide.dart';
+import '../../components/floating_button.dart'; // 북마크 아이콘 임포트
 
 class AllGuideResultForm extends StatefulWidget {
   const AllGuideResultForm({Key? key}) : super(key: key);
@@ -36,33 +37,51 @@ class _AllGuideResultFormState extends State<AllGuideResultForm> {
           ),
         ),
       ),
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            elevation: 0.0,
-            automaticallyImplyLeading: false,
-            backgroundColor: Colors.white,
-            titleSpacing: 0,
-            actions: [
-              SizedBox(
-                child: ResultKeywordList(),
-                width: 370,
+      body: Stack(
+        children: [
+          CustomScrollView(
+            slivers: <Widget>[
+              SliverAppBar(
+                elevation: 0.0,
+                automaticallyImplyLeading: false,
+                backgroundColor: Colors.white,
+                titleSpacing: 0,
+                actions: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16.0),
+                    child: SizedBox(
+                      child: ResultKeywordList(),
+                      width: 340,
+                    ),
+                  ),
+                  SizedBox(width: 20), // 간격 조절
+                ],
+              ),
+              CupertinoSliverRefreshControl(
+                onRefresh: () {
+                  return Future<void>.delayed(const Duration(seconds: 1));
+                },
+              ),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) => ResultList(
+                    picUrl: list[index].picUrl,
+                    title: list[index].title,
+                    browserName: list[index].browserName,
+                  ),
+                  childCount: list.length,
+                ),
               ),
             ],
           ),
-          CupertinoSliverRefreshControl(
-            onRefresh: () {
-              return Future<void>.delayed(const Duration(seconds: 1));
-            },
-          ),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) => ResultList(
-                picUrl: list[index].picUrl,
-                title: list[index].title,
-                browserName: list[index].browserName,
-              ),
-              childCount: list.length,
+          Positioned(
+            right: 180,
+            bottom: 5,
+            child: FloatingButton(
+              imgPath: "assets/plus.png",
+              onPressed: () {
+                Navigator.pushNamed(context, '/');
+              },
             ),
           ),
         ],
