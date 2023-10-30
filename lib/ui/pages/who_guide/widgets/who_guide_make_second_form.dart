@@ -29,7 +29,7 @@ class WhoGuideMakeSecondForm extends StatelessWidget {
             BoxNoPaddingButton(
               text: "다음",
               press: () {
-                Navigator.pushNamed(context, 'guidemakesecondform');
+                Navigator.pushNamed(context, 'guidemakethirdform');
               },
             ),
           ],
