@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:project_all_guide_front/ui/pages/components/who_guide_list_item.dart';
 
 import '../../../../data/model/who_guide.dart';
+import '../../components/who_guide_list_item.dart';
 import 'home_top_button.dart';
 
 class WhoGuideList extends StatefulWidget {

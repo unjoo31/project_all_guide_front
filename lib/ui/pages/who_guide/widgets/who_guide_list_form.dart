@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_all_guide_front/ui/pages/who_guide/widgets/who_guide_detail_form.dart';
 
 import '../../../../data/model/who_guide.dart';
 import '../../components/floating_button.dart';
@@ -69,6 +70,16 @@ class _WhoGuideListFormState extends State<WhoGuideListForm> {
                     userName: list[index].userName,
                     title: list[index].title,
                     picUrlFirst: list[index].picUrlFirst,
+                    onDetailPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => WhoGuideDetailForm(
+                            selectedIndex: index, // 선택된 인덱스 전달
+                          ),
+                        ),
+                      );
+                    },
                   ),
                   childCount: list.length,
                 ),

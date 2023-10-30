@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_all_guide_front/ui/pages/components/bookmark_icon.dart';
 
-import '../../../_core/constants/move.dart';
 import 'box_mini_color_button.dart';
 
 class WhoGuideListItem extends StatelessWidget {
@@ -9,12 +8,14 @@ class WhoGuideListItem extends StatelessWidget {
   final String userName;
   final String title;
   final String picUrlFirst;
+  final VoidCallback? onDetailPressed;
 
   const WhoGuideListItem({
     required this.userImg,
     required this.userName,
     required this.title,
     required this.picUrlFirst,
+    this.onDetailPressed,
   });
 
   @override
@@ -68,9 +69,7 @@ class WhoGuideListItem extends StatelessWidget {
                               Spacer(),
                               BoxMiniColorButton(
                                 text: "자세히보기",
-                                press: () {
-                                  Navigator.pushNamed(context, Move.joinPage);
-                                },
+                                press: onDetailPressed,
                               ),
                             ],
                           ),
