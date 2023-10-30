@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../components/box_no_padding_button.dart';
+import 'make_sequence_second_form.dart';
+import 'make_subscript.dart';
+import 'make_title_form.dart';
 
 class WhoGuideMakeSecondForm extends StatelessWidget {
   const WhoGuideMakeSecondForm({super.key});
@@ -8,12 +11,23 @@ class WhoGuideMakeSecondForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: BoxNoPaddingButton(
-          text: "Second 다음",
-          press: () {
-            Navigator.pushNamed(context, 'guidemakethirdform');
-          },
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          children: [
+            SizedBox(height: 20),
+            MakeTitleForm(),
+            SizedBox(height: 20),
+            MakeSequenceSecondForm(),
+            SizedBox(height: 20),
+            MakeSubscript(),
+            BoxNoPaddingButton(
+              text: "다음",
+              press: () {
+                Navigator.pushNamed(context, 'guidemakesecondform');
+              },
+            ),
+          ],
         ),
       ),
     );

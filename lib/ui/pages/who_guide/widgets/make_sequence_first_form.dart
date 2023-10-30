@@ -3,8 +3,8 @@ import 'package:project_all_guide_front/_core/constants/colors.dart';
 
 import '../../components/icon_bottom_text.dart';
 
-class MakeSequenceForm extends StatelessWidget {
-  const MakeSequenceForm({super.key});
+class MakeSequenceFirstForm extends StatelessWidget {
+  const MakeSequenceFirstForm({super.key});
 
   @override
   Widget build(BuildContext context) {
