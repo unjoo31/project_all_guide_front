@@ -12,7 +12,7 @@ class WhoGuideCategoryForm extends StatelessWidget {
       children: List.generate(whoGuideCategoryButtonList.length, (index) {
         return GestureDetector(
           onTap: () {
-            // Handle category button tap
+            Navigator.pushNamed(context, 'whoguidefilterform');
           },
           child: Chip(
             label: Container(

@@ -48,7 +48,7 @@ class _WhoGuideListFormState extends State<WhoGuideListForm> {
                 titleSpacing: 0,
                 actions: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
+                    padding: const EdgeInsets.only(right: 8.0),
                     child: SizedBox(
                       child: WhoGuideCategoryForm(),
                       width: 340,

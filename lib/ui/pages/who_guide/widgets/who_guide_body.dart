@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_all_guide_front/ui/pages/who_guide/widgets/who_guide_filter_form.dart';
 
 import 'who_guide_list_form.dart';
 import 'who_guide_make_first_form.dart';
@@ -34,6 +35,9 @@ class _WhoGuideBodyState extends State<WhoGuideBody> {
             break;
           case 'guidemakeforthform':
             builder = (context) => WhoGuideMakeForthForm();
+            break;
+          case 'whoguidefilterform':
+            builder = (context) => WhoGuideFilterForm();
             break;
           default:
             throw Exception('Invalid route: ${settings.name}');

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:project_all_guide_front/ui/pages/components/middle_text.dart';
 
 import '../../../../_core/constants/colors.dart';
@@ -7,14 +6,14 @@ import '../../../../data/model/category_keyword.dart';
 import '../../components/bottom_text.dart';
 import 'make_keyword_list.dart';
 
-class MakeKeywordForm extends StatefulWidget {
-  const MakeKeywordForm({super.key});
+class FilterListKeyword extends StatefulWidget {
+  const FilterListKeyword({super.key});
 
   @override
-  State<MakeKeywordForm> createState() => _elationGuideState();
+  State<FilterListKeyword> createState() => _elationGuideState();
 }
 
-class _elationGuideState extends State<MakeKeywordForm> {
+class _elationGuideState extends State<FilterListKeyword> {
   final List<CategoryKeyword> list = categoryKeywordList;
   List<String> selectedKeywords = [];
 
@@ -31,20 +30,12 @@ class _elationGuideState extends State<MakeKeywordForm> {
               Stack(
                 children: [
                   SizedBox(
-                    child: Image.asset("assets/search.png"),
+                    height: 50,
+                    child: Container(),
                   ),
                   Positioned(
-                    right: 15,
-                    top: 20,
-                    child: SvgPicture.asset(
-                      "assets/voice.svg",
-                      width: 25,
-                      height: 25,
-                    ),
-                  ),
-                  Positioned(
-                    left: 15,
-                    top: 10,
+                    left: 0,
+                    top: 0,
                     child: Wrap(
                       spacing: 8.0,
                       children: selectedKeywords.map((keyword) {
