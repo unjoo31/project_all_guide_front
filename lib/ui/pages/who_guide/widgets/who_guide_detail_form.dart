@@ -58,6 +58,8 @@ class _WhoGuideDetailFormState extends State<WhoGuideDetailForm> {
         userName: selectedGuide.userName,
         title: selectedGuide.title,
         picUrlFirst: selectedGuide.picUrlFirst,
+        picUrlSecond: selectedGuide.picUrlSecond,
+        picUrlThird: selectedGuide.picUrlThird,
         content: selectedGuide.content,
       ),
     );
