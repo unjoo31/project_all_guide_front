@@ -4,7 +4,10 @@ import 'package:project_all_guide_front/ui/pages/components/bottom_text.dart';
 import '../../components/middle_text.dart';
 
 class MakeSubscript extends StatelessWidget {
-  const MakeSubscript({Key? key});
+  final String titleText;
+  final String subText;
+  const MakeSubscript(
+      {required this.titleText, required this.subText, Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,10 +18,7 @@ class MakeSubscript extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            MiddleText(text: "카테고리를 선택하세요."),
-            BottomText(text: "카테고리는 1개만 선택할 수 있습니다.")
-          ],
+          children: [MiddleText(text: titleText), BottomText(text: subText)],
         ),
       ),
     );

@@ -15,9 +15,9 @@ class MakeSequenceSecondForm extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconBottomText(
-                text: "카테고리", img: "first_on.png", textColor: kPrimaryColor),
+                text: "카테고리", img: "complete.png", textColor: kUnPointColor),
             IconBottomText(
-                text: "키워드", img: "second_off.png", textColor: kUnPointColor),
+                text: "키워드", img: "second_on.png", textColor: kPrimaryColor),
             IconBottomText(
                 text: "사진선택", img: "third_off.png", textColor: kUnPointColor),
             IconBottomText(

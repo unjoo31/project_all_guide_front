@@ -21,7 +21,10 @@ class WhoGuideMakeFirstForm extends StatelessWidget {
             SizedBox(height: 20),
             MakeSequenceFirstForm(),
             SizedBox(height: 20),
-            MakeSubscript(),
+            MakeSubscript(
+              titleText: "카테고리를 선택하세요",
+              subText: "카테고리는 1개만 선택할 수 있습니다.",
+            ),
             MakeCategoryListForm(),
             BoxNoPaddingButton(
               text: "다음",

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../components/box_no_padding_button.dart';
+import 'make_keyword_form.dart';
 import 'make_sequence_second_form.dart';
 import 'make_subscript.dart';
 import 'make_title_form.dart';
@@ -20,7 +21,11 @@ class WhoGuideMakeSecondForm extends StatelessWidget {
             SizedBox(height: 20),
             MakeSequenceSecondForm(),
             SizedBox(height: 20),
-            MakeSubscript(),
+            MakeSubscript(
+              titleText: "키워드를 선택하세요",
+              subText: "연간키워드를 선택하세요",
+            ),
+            MakeKeywordForm(),
             BoxNoPaddingButton(
               text: "다음",
               press: () {
