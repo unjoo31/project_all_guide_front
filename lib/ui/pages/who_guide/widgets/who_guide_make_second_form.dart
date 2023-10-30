@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../components/box_no_padding_button.dart';
 import 'make_keyword_form.dart';
 import 'make_sequence_second_form.dart';
+import 'make_sequence_third_form.dart';
 import 'make_subscript.dart';
 import 'make_title_form.dart';
 
