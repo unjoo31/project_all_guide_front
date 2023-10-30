@@ -14,7 +14,7 @@ class WhoGuideMakeThirdForm extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
+        child: ListView(
           children: [
             SizedBox(height: 20),
             MakeTitleForm(),
