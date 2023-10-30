@@ -38,14 +38,15 @@ class _ExtendsIconTextCardState extends State<WhoGuideFilterList> {
   }
 
   double calculateHeight() {
+    double dividerHeight = 0.6; // Divider의 높이
     if (showAlignFilter) {
-      return 60.0; // 원하는 높이 값으로 변경
+      return 60.0 + dividerHeight;
     } else if (showCategoryFilter) {
-      return 110.0; // 다른 카테고리의 높이 값으로 변경
+      return 110.0 + dividerHeight;
     } else if (showKeywordFilter) {
-      return 300.0; // 다른 키워드의 높이 값으로 변경
+      return 300.0 + dividerHeight;
     } else {
-      return 0.0; // 기본값이나 0.0을 반환하거나 필요에 따라 다른 값으로 변경
+      return 60.0 + dividerHeight;
     }
   }
 
@@ -98,7 +99,7 @@ class _ExtendsIconTextCardState extends State<WhoGuideFilterList> {
             ),
           ),
           Divider(
-            height: 0.5,
+            height: 0.6,
             color: kUnPointColor,
           ),
         ],
