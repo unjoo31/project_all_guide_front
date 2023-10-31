@@ -26,9 +26,9 @@ class WhereGuideSecondForm extends StatelessWidget {
             ),
             SizedBox(height: 20),
             BoxNoPaddingButton(
-              text: "다음",
+              text: "위치 허용 후 탐색하기",
               press: () {
-                Navigator.pushNamed(context, 'guidemakethirdform');
+                Navigator.pushNamed(context, 'guidemakesecondmapform');
               },
             ),
           ],

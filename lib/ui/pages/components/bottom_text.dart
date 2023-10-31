@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_all_guide_front/_core/constants/theme.dart';
+
+import '../../../_core/constants/colors.dart';
 
 class BottomText extends StatelessWidget {
   final String text;
@@ -10,10 +11,11 @@ class BottomText extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 10),
       child: SizedBox(
-        height: 30,
+        height: 40,
         child: Text(
           "${text}",
-          style: textTheme().bodyMedium,
+          style: TextStyle(
+              fontSize: 15, fontWeight: FontWeight.bold, color: kUnPointColor),
         ),
       ),
     );

@@ -1,35 +1,39 @@
 import 'package:flutter/material.dart';
 
 import '../../../../_core/constants/colors.dart';
-import '../../../../data/model/where_guide_category.dart';
+import '../../../../data/model/hash_menu.dart';
 
-class MakeCategoryListForm extends StatefulWidget {
-  const MakeCategoryListForm({Key? key}) : super(key: key);
+class MakeSelectMenuListForm extends StatefulWidget {
+  const MakeSelectMenuListForm({Key? key}) : super(key: key);
 
   @override
   _MakeCategoryListFormState createState() => _MakeCategoryListFormState();
 }
 
-class _MakeCategoryListFormState extends State<MakeCategoryListForm> {
-  int selectedIndex = -1; // 현재 선택된 인덱스
+class _MakeCategoryListFormState extends State<MakeSelectMenuListForm> {
+  Set<int> selectedIndices = {}; // 현재 선택된 인덱스들
 
   @override
   Widget build(BuildContext context) {
-    List<WhereGuideCategory> list = whereGuideCategoryList;
+    List<HashMenu> list = hashMenuList;
 
     return Column(
       children: [
         SizedBox(
-          height: 260,
+          height: 300,
           child: ListView.separated(
             physics: ClampingScrollPhysics(),
             itemBuilder: (context, index) {
-              bool isSelected = index == selectedIndex;
+              bool isSelected = selectedIndices.contains(index);
 
               return GestureDetector(
                 onTap: () {
                   setState(() {
-                    selectedIndex = index; // 인덱스 업데이트
+                    if (isSelected) {
+                      selectedIndices.remove(index); // 선택 해제
+                    } else {
+                      selectedIndices.add(index); // 선택
+                    }
                   });
                 },
                 child: Padding(
@@ -43,17 +47,24 @@ class _MakeCategoryListFormState extends State<MakeCategoryListForm> {
                           Padding(
                             padding: const EdgeInsets.only(left: 16.0),
                             child: Text(
-                              list[index].categoryButtonName,
+                              list[index].hashMenuName,
                               style: TextStyle(
-                                color:
-                                    isSelected ? kPrimaryColor : Colors.black,
+                                color: Colors.black,
                                 fontSize: 16,
                               ),
                             ),
                           ),
-                          Spacer(), // 여백을 추가하여 아이콘과 텍스트 우측에 표시
+                          Spacer(),
+                          Text(
+                            list[index].hashMenuPrice,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                            ),
+                          ),
+                          SizedBox(width: 15),
                           Icon(
-                            isSelected ? Icons.check : null,
+                            Icons.check,
                             color: kPrimaryColor,
                           ),
                           SizedBox(width: 15),

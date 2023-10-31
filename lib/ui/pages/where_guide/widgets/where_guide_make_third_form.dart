@@ -4,6 +4,7 @@ import 'package:project_all_guide_front/ui/pages/where_guide/widgets/make_title_
 
 import '../../components/box_no_padding_button.dart';
 import '../../who_guide/widgets/make_subscript.dart';
+import 'make_menu_list_form.dart';
 
 class WhereGuideThirdForm extends StatelessWidget {
   const WhereGuideThirdForm({super.key});
@@ -24,7 +25,7 @@ class WhereGuideThirdForm extends StatelessWidget {
               titleText: "메뉴를 선택하세요",
               subText: "원하는 메뉴를 모두 선택하세요.",
             ),
-            SizedBox(height: 20),
+            MakeMenuListForm(),
             BoxNoPaddingButton(
               text: "다음",
               press: () {
