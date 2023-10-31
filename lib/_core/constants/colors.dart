@@ -6,6 +6,7 @@ const Color kPrimaryColor = Color(0xFF0038FF);
 const Color kPointColor = Color(0xFF0038FF);
 const Color kUnPointColor = Color(0xFF979797);
 const Color kGreyColor = Color(0xFFEEEEEE);
+const Color kLightGreyColor = Color(0xFFF8F8F8);
 
 // font color
 const Color kFontBlack = Color(0xFF222222);

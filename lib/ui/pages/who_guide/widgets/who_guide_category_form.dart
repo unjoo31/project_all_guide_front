@@ -16,8 +16,10 @@ class WhoGuideCategoryForm extends StatelessWidget {
           },
           child: Chip(
             label: Container(
-              width: 70,
+              width: 75,
+              height: 35,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
                     "assets/${whoGuideCategoryButtonList[index].img}",
@@ -28,7 +30,11 @@ class WhoGuideCategoryForm extends StatelessWidget {
                       width: 7.0), // Add some spacing between icon and text
                   Text(
                     whoGuideCategoryButtonList[index].categoryButtonName,
-                    style: TextStyle(color: Colors.black, fontSize: 13),
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
