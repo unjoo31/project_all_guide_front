@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:project_all_guide_front/ui/pages/where_guide/widgets/where_guide_make_forth_form.dart';
+import 'package:project_all_guide_front/ui/pages/where_guide/widgets/where_guide_make_third_form.dart';
 
 import 'where_guide_list_form.dart';
+import 'where_guide_make_first_form.dart';
+import 'where_guide_make_second_form.dart';
 
 class WhereGuideBody extends StatefulWidget {
   const WhereGuideBody({super.key});
@@ -18,6 +22,18 @@ class _WhoGuideBodyState extends State<WhereGuideBody> {
         switch (settings.name) {
           case '/':
             builder = (context) => WhereGuideListForm();
+            break;
+          case 'guidemakefirtform':
+            builder = (context) => WhereGuideFirstForm();
+            break;
+          case 'guidemakesecondform':
+            builder = (context) => WhereGuideSecondForm();
+            break;
+          case 'guidemakethirdform':
+            builder = (context) => WhereGuideThirdForm();
+            break;
+          case 'guidemakeforthform':
+            builder = (context) => WhereGuideForthForm();
             break;
           default:
             throw Exception('Invalid route: ${settings.name}');
