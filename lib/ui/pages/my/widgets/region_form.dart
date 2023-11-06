@@ -13,6 +13,7 @@ class _RegionFormState extends State<RegionForm> {
   int _selectedRegion = 0;
   double _kItemExtent = 32.0;
   List<String> _regionNames = <String>[
+    '선택안함',
     '부산',
     '서울',
     '대구',

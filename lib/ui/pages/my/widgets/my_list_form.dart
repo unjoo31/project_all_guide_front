@@ -60,7 +60,7 @@ class MyListForm extends StatelessWidget {
               guideUrl: "mywhereguideform",
             ),
             SizedBox(height: 15),
-            CustomCupertinoButton(
+            LogoutCupertinoButton(
               text: "로그아웃",
               press: () {
                 Navigator.pushNamed(context, 'guidemakesecondform');

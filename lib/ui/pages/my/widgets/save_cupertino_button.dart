@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../../../_core/constants/colors.dart';
-import '../../../_core/constants/move.dart';
+import '../../../../_core/constants/colors.dart';
 
-class LogoutCupertinoButton extends StatelessWidget {
+class SaveCupertinoButton extends StatelessWidget {
   final String? text;
   final GestureTapCallback? press;
   final Color color;
 
-  const LogoutCupertinoButton(
+  const SaveCupertinoButton(
       {Key? key, this.text, this.press, this.color = kPrimaryColor})
       : super(key: key);
 
@@ -32,13 +31,13 @@ class LogoutCupertinoButton extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        "로그아웃",
+                        "저장",
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 16.0),
                       Text(
-                        "로그아웃 하시면 서비스 사용이 불가능하며 \n초기화면으로 돌아갑니다. \n정말로 로그아웃 하시겠습니까?",
+                        "변경사항을 저장하시겠습니까?",
                         textAlign: TextAlign.center,
                       ),
                       SizedBox(height: 16.0),
@@ -67,7 +66,7 @@ class LogoutCupertinoButton extends StatelessWidget {
                           ),
                           TextButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, Move.loginPage);
+                              Navigator.pushNamed(context, '/');
                             },
                             child: Container(
                               width: 120,
@@ -80,7 +79,7 @@ class LogoutCupertinoButton extends StatelessWidget {
                               ),
                               padding: EdgeInsets.all(10.0),
                               child: Text(
-                                "로그아웃",
+                                "저장",
                                 style: TextStyle(color: Colors.white),
                                 textAlign: TextAlign.center,
                               ),

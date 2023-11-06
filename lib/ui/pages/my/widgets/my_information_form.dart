@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project_all_guide_front/ui/pages/my/widgets/save_cupertino_button.dart';
 
 import '../../../../data/model/my_imformation.dart';
-import '../../components/box_no_padding_button.dart';
 import 'my_information_title.dart';
 import 'my_information_write_form.dart';
 
@@ -22,7 +22,7 @@ class MyInformationForm extends StatelessWidget {
             MyInformationWriteForm(
               userImg: myInformationList[0].userImg,
             ),
-            BoxNoPaddingButton(
+            SaveCupertinoButton(
               text: "저장",
               press: () {
                 Navigator.pushNamed(context, '/');
