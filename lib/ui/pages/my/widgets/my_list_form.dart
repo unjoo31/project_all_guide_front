@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:project_all_guide_front/ui/pages/components/middle_text.dart';
 
+import '../../../../data/model/my_imformation.dart';
 import '../../components/custom_cupertino_button.dart';
+import 'my_list_guide.dart';
+import 'my_list_information.dart';
 
 class MyListForm extends StatelessWidget {
   const MyListForm({super.key});
@@ -33,6 +36,30 @@ class MyListForm extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             MiddleText(text: "마이페이지"),
+            SizedBox(height: 15),
+            MyListInformation(
+                userImg: myInformationList[0].userImg,
+                userName: myInformationList[0].userName,
+                userEmail: myInformationList[0].userEmail),
+            SizedBox(height: 15),
+            MyListGuide(
+              guideName: "모두의 가이드",
+              guideImg: "my_all_guide.png",
+              guideUrl: "myallguideform",
+            ),
+            SizedBox(height: 15),
+            MyListGuide(
+              guideName: "누구나 가이드",
+              guideImg: "my_who_guide.png",
+              guideUrl: "mywhoguideform",
+            ),
+            SizedBox(height: 15),
+            MyListGuide(
+              guideName: "어디가 가이드",
+              guideImg: "my_where_guide.png",
+              guideUrl: "mywhereguideform",
+            ),
+            SizedBox(height: 15),
             CustomCupertinoButton(
               text: "로그아웃",
               press: () {
