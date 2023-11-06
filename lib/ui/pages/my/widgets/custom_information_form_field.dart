@@ -23,6 +23,7 @@ class CustomInformationFormField extends StatelessWidget {
       children: [
         const SizedBox(height: gap_small),
         SizedBox(
+          width: 200,
           height: 55,
           child: Stack(
             alignment: Alignment.centerRight,
@@ -32,40 +33,35 @@ class CustomInformationFormField extends StatelessWidget {
                 validator: funValidator,
                 obscureText: obscureText,
                 decoration: InputDecoration(
-                  hintText: "   $text",
+                  hintText: "$text",
                   hintStyle: TextStyle(color: kUnPointColor),
                   filled: true,
                   fillColor: Colors.white,
-                  border: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      width: 1.0,
-                      color: kUnPointColor,
-                    ),
-                  ),
-                  enabledBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      width: 1.0,
-                      color: kUnPointColor,
-                    ),
-                  ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      width: 1.0,
-                      color: kUnPointColor,
-                    ),
-                  ),
-                  errorBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      width: 1.0,
-                      color: kUnPointColor,
-                    ),
-                  ),
-                  focusedErrorBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(
-                      width: 1.0,
-                      color: kUnPointColor,
-                    ),
-                  ),
+                  border: InputBorder.none,
+                  // enabledBorder: UnderlineInputBorder(
+                  //   borderSide: BorderSide(
+                  //     width: 1.0,
+                  //     color: kUnPointColor,
+                  //   ),
+                  // ),
+                  // focusedBorder: UnderlineInputBorder(
+                  //   borderSide: BorderSide(
+                  //     width: 1.0,
+                  //     color: kUnPointColor,
+                  //   ),
+                  // ),
+                  // errorBorder: UnderlineInputBorder(
+                  //   borderSide: BorderSide(
+                  //     width: 1.0,
+                  //     color: kUnPointColor,
+                  //   ),
+                  // ),
+                  // focusedErrorBorder: UnderlineInputBorder(
+                  //   borderSide: BorderSide(
+                  //     width: 1.0,
+                  //     color: kUnPointColor,
+                  //   ),
+                  // ),
                 ),
               ),
             ],

@@ -11,7 +11,7 @@ class CalendarState extends State<CalendarForm> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 360,
+      width: 200,
       height: 50,
       child: ElevatedButton(
         onPressed: () async {
@@ -29,11 +29,16 @@ class CalendarState extends State<CalendarForm> {
           }
         },
         style: ButtonStyle(
+          elevation: MaterialStateProperty.all(0),
           backgroundColor: MaterialStateProperty.all(Colors.white),
         ),
-        child: Text(
-          "${date.year.toString()}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}",
-          style: TextStyle(color: Colors.black),
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: Text(
+            "${date.year.toString()}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}",
+            style: TextStyle(color: Colors.black),
+            textAlign: TextAlign.left,
+          ),
         ),
       ),
     );

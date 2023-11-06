@@ -40,65 +40,149 @@ class MyInformationWriteForm extends ConsumerWidget {
           SizedBox(
             height: gap_medium,
           ),
-          Text(
-            "이름",
-            style: TextStyle(
-                fontSize: 14, color: kFontBlack, fontWeight: FontWeight.bold),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  "이름",
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: kFontBlack,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Spacer(),
+              CustomInformationFormField(
+                text: "이름을 입력하세요.",
+                obscureText: false,
+                funValidator: validateUsername(),
+                controller: _userName,
+              ),
+            ],
           ),
-          CustomInformationFormField(
-            text: "이름을 입력하세요.",
-            obscureText: false,
-            funValidator: validateUsername(),
-            controller: _userName,
+          Divider(
+            thickness: 1,
+            color: kGreyColor,
           ),
-          const SizedBox(height: gap_medium),
-          Text(
-            "이메일",
-            style: TextStyle(
-                fontSize: 14, color: kFontBlack, fontWeight: FontWeight.bold),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  "이메일",
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: kFontBlack,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Spacer(),
+              CustomInformationFormField(
+                text: "이메일을 입력하세요.",
+                obscureText: false,
+                funValidator: validateUsername(),
+                controller: _userEmail,
+              ),
+            ],
           ),
-          CustomInformationFormField(
-            text: "이메일을 입력하세요.",
-            obscureText: false,
-            funValidator: validateUsername(),
-            controller: _userEmail,
+          Divider(
+            thickness: 1,
+            color: kGreyColor,
           ),
-          const SizedBox(height: gap_medium),
-          Text(
-            "비밀번호",
-            style: TextStyle(
-                fontSize: 14, color: kFontBlack, fontWeight: FontWeight.bold),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  "비밀번호",
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: kFontBlack,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Spacer(),
+              CustomInformationFormField(
+                text: " **********",
+                obscureText: false,
+                funValidator: validatePassword(),
+                controller: _passward,
+              ),
+            ],
           ),
-          CustomInformationFormField(
-            text: " **********",
-            obscureText: false,
-            funValidator: validatePassword(),
-            controller: _passward,
+          Divider(
+            thickness: 1,
+            color: kGreyColor,
           ),
-          const SizedBox(height: gap_medium),
-          Text(
-            "지역",
-            style: TextStyle(
-                fontSize: 14, color: kFontBlack, fontWeight: FontWeight.bold),
+          Padding(
+            padding: const EdgeInsets.only(top: 5.0, bottom: 5.0),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: Text(
+                    "지역",
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: kFontBlack,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Spacer(),
+                RegionForm(),
+              ],
+            ),
           ),
-          RegionForm(),
-          Text(
-            "생년월일",
-            style: TextStyle(
-                fontSize: 14, color: kFontBlack, fontWeight: FontWeight.bold),
+          Divider(
+            thickness: 1,
+            color: kGreyColor,
           ),
-          CalendarForm(),
-          const SizedBox(height: gap_medium),
-          Text(
-            "전화번호",
-            style: TextStyle(
-                fontSize: 14, color: kFontBlack, fontWeight: FontWeight.bold),
+          Row(
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.only(left: 8.0, top: 5.0, bottom: 5.0),
+                child: Text(
+                  "생년월일",
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: kFontBlack,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Spacer(),
+              CalendarForm(),
+            ],
           ),
-          CustomInformationFormField(
-            text: "전화번호를 입력하세요.",
-            obscureText: false,
-            funValidator: validateUsername(),
-            controller: _phonenumber,
+          Divider(
+            thickness: 1,
+            color: kGreyColor,
+          ),
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 8.0),
+                child: Text(
+                  "전화번호",
+                  style: TextStyle(
+                      fontSize: 14,
+                      color: kFontBlack,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Spacer(),
+              CustomInformationFormField(
+                text: "전화번호를 입력하세요.",
+                obscureText: false,
+                funValidator: validateUsername(),
+                controller: _phonenumber,
+              ),
+            ],
+          ),
+          Divider(
+            thickness: 1,
+            color: kGreyColor,
           ),
           const SizedBox(height: gap_medium),
         ],

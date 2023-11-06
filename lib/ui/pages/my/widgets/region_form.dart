@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
+import '../../../../_core/constants/colors.dart';
+
 class RegionForm extends StatefulWidget {
   const RegionForm({super.key});
 
@@ -8,7 +10,7 @@ class RegionForm extends StatefulWidget {
 }
 
 class _RegionFormState extends State<RegionForm> {
-  int _selectedFruit = 0;
+  int _selectedRegion = 0;
   double _kItemExtent = 32.0;
   List<String> _regionNames = <String>[
     '부산',
@@ -21,69 +23,71 @@ class _RegionFormState extends State<RegionForm> {
 
   void _showDialog(Widget child) {
     showCupertinoModalPopup<void>(
-        context: context,
-        builder: (BuildContext context) => Container(
-              height: 216,
-              padding: const EdgeInsets.only(top: 6.0),
-              margin: EdgeInsets.only(
-                bottom: MediaQuery.of(context).viewInsets.bottom,
-              ),
-              color: CupertinoColors.systemBackground.resolveFrom(context),
-              child: SafeArea(
-                top: false,
-                child: child,
-              ),
-            ));
+      context: context,
+      builder: (BuildContext context) => Container(
+        height: 216,
+        padding: const EdgeInsets.only(top: 6.0),
+        margin: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
+        color: CupertinoColors.systemBackground.resolveFrom(context),
+        child: SafeArea(
+          top: false,
+          child: child,
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
+      backgroundColor: CupertinoColors.white,
       child: DefaultTextStyle(
         style: TextStyle(
           color: CupertinoColors.label.resolveFrom(context),
           fontSize: 22.0,
         ),
-        child: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              const Text('지역을 선택하세요.'),
-              CupertinoButton(
-                padding: EdgeInsets.zero,
-                // Display a CupertinoPicker with list of fruits.
-                onPressed: () => _showDialog(
-                  CupertinoPicker(
-                    magnification: 1.22,
-                    squeeze: 1.2,
-                    useMagnifier: true,
-                    itemExtent: _kItemExtent,
-                    // This is called when selected item is changed.
-                    onSelectedItemChanged: (int selectedItem) {
-                      setState(() {
-                        _selectedFruit = selectedItem;
-                      });
-                    },
-                    children:
-                        List<Widget>.generate(_regionNames.length, (int index) {
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start, // 좌측 정렬로 변경
+          children: <Widget>[
+            const Text(
+              '지역을 선택하세요.',
+              style: TextStyle(fontSize: 15, color: kUnPointColor),
+            ),
+            SizedBox(width: 20),
+            CupertinoButton(
+              padding: EdgeInsets.zero,
+              onPressed: () => _showDialog(
+                CupertinoPicker(
+                  magnification: 1.22,
+                  squeeze: 1.2,
+                  useMagnifier: true,
+                  itemExtent: _kItemExtent,
+                  onSelectedItemChanged: (int selectedItem) {
+                    setState(() {
+                      _selectedRegion = selectedItem;
+                    });
+                  },
+                  children: List<Widget>.generate(
+                    _regionNames.length,
+                    (int index) {
                       return Center(
-                        child: Text(
-                          _regionNames[index],
-                        ),
+                        child: Text(_regionNames[index],
+                            style: TextStyle(fontSize: 15)),
                       );
-                    }),
-                  ),
-                ),
-                // This displays the selected fruit name.
-                child: Text(
-                  _regionNames[_selectedFruit],
-                  style: const TextStyle(
-                    fontSize: 22.0,
+                    },
                   ),
                 ),
               ),
-            ],
-          ),
+              child: Text(
+                _regionNames[_selectedRegion],
+                style: const TextStyle(
+                  fontSize: 15.0,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
