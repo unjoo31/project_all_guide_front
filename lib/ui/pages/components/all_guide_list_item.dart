@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:project_all_guide_front/ui/pages/components/bookmark_icon.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-import '../../../_core/constants/move.dart';
 import 'box_mini_color_button.dart';
 
 class AllGuideListItem extends StatelessWidget {
@@ -78,8 +78,15 @@ class AllGuideListItem extends StatelessWidget {
                           Spacer(),
                           BoxMiniColorButton(
                             text: "자세히보기",
-                            press: () {
-                              Navigator.pushNamed(context, Move.joinPage);
+                            press: () async {
+                              const String _url =
+                                  'https://m.blog.naver.com/siwoo89/221202703245';
+                              if (await canLaunch(_url)) {
+                                await launch(_url);
+                              } else {
+                                print('Could not launch $_url'); // 에러 출력
+                                throw 'Could not launch $_url';
+                              }
                             },
                           ),
                         ],

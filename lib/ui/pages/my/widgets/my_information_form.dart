@@ -17,7 +17,7 @@ class MyInformationForm extends StatelessWidget {
         child: ListView(
           children: [
             SizedBox(height: 20),
-            MyInformationTitle(),
+            MyInformationTitle(backText: "취소", titleText: "프로필"),
             SizedBox(height: 20),
             MyInformationWriteForm(
               userImg: myInformationList[0].userImg,

@@ -6,14 +6,11 @@ class MiddleText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 10),
-      child: SizedBox(
-        height: 20,
-        child: Text(
-          "${text}",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-        ),
+    return SizedBox(
+      height: 20,
+      child: Text(
+        "${text}",
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
       ),
     );
   }

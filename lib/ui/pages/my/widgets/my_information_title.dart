@@ -4,7 +4,11 @@ import 'package:project_all_guide_front/ui/pages/components/middle_text.dart';
 import '../../components/custom_text_color_button.dart';
 
 class MyInformationTitle extends StatelessWidget {
-  const MyInformationTitle({Key? key});
+  final String backText;
+  final String titleText;
+
+  const MyInformationTitle(
+      {required this.backText, required this.titleText, Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +17,13 @@ class MyInformationTitle extends StatelessWidget {
       child: Row(
         children: [
           CustomTextColorButton(
-            "취소",
+            "${backText}",
             () {
               Navigator.pushNamed(context, '/');
             },
           ),
           SizedBox(width: 90),
-          MiddleText(text: "프로필"),
+          MiddleText(text: "${titleText}"),
         ],
       ),
     );
