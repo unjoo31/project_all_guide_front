@@ -71,6 +71,7 @@ class _WhoGuideListFormState extends State<WhereGuideListForm> {
                     orderMenu_1: list[index].orderMenu_1,
                     orderMenu_2: list[index].orderMenu_2,
                     orderMenu_3: list[index].orderMenu_3,
+                    orderPrice: list[index].orderPrice,
                   ),
                   childCount: list.length,
                 ),

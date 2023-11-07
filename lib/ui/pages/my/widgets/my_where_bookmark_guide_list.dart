@@ -1,18 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:project_all_guide_front/data/model/where_guide.dart';
 
+import '../../../../data/model/where_guide.dart';
 import '../../components/where_guide_list_item.dart';
-import 'home_top_button.dart';
+import '../../where_guide/widgets/where_guide_detail_form.dart';
 
-class WhereGuideList extends StatefulWidget {
-  const WhereGuideList({super.key});
+class MyWhereBookmarkGuideList extends StatefulWidget {
+  const MyWhereBookmarkGuideList({super.key});
 
   @override
-  State<WhereGuideList> createState() => _WhereGuideListState();
+  State<MyWhereBookmarkGuideList> createState() =>
+      _MyWhereBookmarkGuideListState();
 }
 
-class _WhereGuideListState extends State<WhereGuideList> {
+class _MyWhereBookmarkGuideListState extends State<MyWhereBookmarkGuideList> {
   final List<WhereGuide> list = whereGuideList;
 
   @override
@@ -20,23 +20,6 @@ class _WhereGuideListState extends State<WhereGuideList> {
     return Scaffold(
       body: CustomScrollView(
         slivers: <Widget>[
-          SliverAppBar(
-            elevation: 0.0,
-            automaticallyImplyLeading: false,
-            backgroundColor: Colors.white,
-            titleSpacing: 0,
-            actions: [
-              SizedBox(
-                child: HomeTopButton(),
-                width: 370,
-              ),
-            ],
-          ),
-          CupertinoSliverRefreshControl(
-            onRefresh: () {
-              return Future<void>.delayed(const Duration(seconds: 1));
-            },
-          ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) => WhereGuideListItem(
@@ -47,6 +30,16 @@ class _WhereGuideListState extends State<WhereGuideList> {
                 orderMenu_2: list[index].orderMenu_2,
                 orderMenu_3: list[index].orderMenu_3,
                 orderPrice: list[index].orderPrice,
+                onDetailPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => WhereGuideDetailForm(
+                        selectedIndex: index, // 선택된 인덱스 전달
+                      ),
+                    ),
+                  );
+                },
               ),
               childCount: list.length,
             ),

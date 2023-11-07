@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_all_guide_front/ui/pages/components/bookmark_icon.dart';
 
 import '../../../_core/constants/colors.dart';
+import 'box_mini_color_button.dart';
 
 class WhereGuideListItem extends StatelessWidget {
   final String picUrl;
@@ -10,6 +11,8 @@ class WhereGuideListItem extends StatelessWidget {
   final String orderMenu_1;
   final String orderMenu_2;
   final String orderMenu_3;
+  final String orderPrice;
+  final VoidCallback? onDetailPressed;
 
   const WhereGuideListItem({
     required this.picUrl,
@@ -18,6 +21,8 @@ class WhereGuideListItem extends StatelessWidget {
     required this.orderMenu_1,
     required this.orderMenu_2,
     required this.orderMenu_3,
+    required this.orderPrice,
+    this.onDetailPressed,
   });
 
   @override
@@ -125,8 +130,18 @@ class WhereGuideListItem extends StatelessWidget {
             ),
           ),
           SizedBox(width: 20),
-          BookmarkIcon(
-            imgPath: "assets/bookmark.svg",
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              BookmarkIcon(
+                imgPath: "assets/bookmark.svg",
+              ),
+              SizedBox(height: 10),
+              BoxMiniColorButton(
+                text: "보기",
+                press: onDetailPressed,
+              ),
+            ],
           ),
           SizedBox(width: 40),
         ],
