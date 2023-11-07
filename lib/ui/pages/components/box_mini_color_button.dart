@@ -5,10 +5,15 @@ import '../../../_core/constants/colors.dart';
 class BoxMiniColorButton extends StatelessWidget {
   final String? text;
   final GestureTapCallback? press;
-  final Color color;
+  final Color bgColor;
+  final Color txColor;
 
   const BoxMiniColorButton(
-      {Key? key, this.text, this.press, this.color = kPrimaryColor})
+      {Key? key,
+      this.text,
+      this.press,
+      this.bgColor = kPrimaryColor,
+      this.txColor = Colors.white})
       : super(key: key);
 
   @override
@@ -17,7 +22,7 @@ class BoxMiniColorButton extends StatelessWidget {
       padding: const EdgeInsets.only(right: 16.0, left: 16.0),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: color,
+          backgroundColor: bgColor,
           padding: EdgeInsets.all(12),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(15.0),
@@ -29,7 +34,7 @@ class BoxMiniColorButton extends StatelessWidget {
           child: Text(
             text ?? "",
             style: TextStyle(
-                fontSize: 13, color: kBackWhite, fontWeight: FontWeight.bold),
+                fontSize: 13, color: txColor, fontWeight: FontWeight.bold),
           ),
         ),
       ),

@@ -24,14 +24,14 @@ class CustomWriteLognTextField extends StatelessWidget {
       children: [
         const SizedBox(height: gap_small),
         SizedBox(
-          height: 150, // 조절 가능한 높이
+          height: 400, // 조절 가능한 높이
           child: Stack(
             alignment: Alignment.centerRight,
             children: [
               TextField(
                 controller: controller,
                 obscureText: obscureText,
-                maxLines: 10, // 여러 줄 입력을 허용
+                maxLines: 15, // 여러 줄 입력을 허용
                 decoration: InputDecoration(
                   hintText: "   $text",
                   hintStyle: TextStyle(color: kUnPointColor),

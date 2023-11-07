@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../_core/constants/colors.dart';
-import '../../../_core/constants/move.dart';
+import '../../../../_core/constants/colors.dart';
+import '../../../../_core/constants/move.dart';
 
 class LogoutCupertinoButton extends StatelessWidget {
   final String? text;

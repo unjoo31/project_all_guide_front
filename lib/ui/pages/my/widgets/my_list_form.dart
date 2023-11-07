@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:project_all_guide_front/ui/pages/components/middle_text.dart';
 
 import '../../../../data/model/my_imformation.dart';
-import '../../components/custom_cupertino_button.dart';
+import 'logout_cupertino_button.dart';
 import 'my_list_guide.dart';
 import 'my_list_information.dart';
 
