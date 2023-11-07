@@ -31,7 +31,7 @@ class _WhereGuideCategoryFormState extends State<WhereGuideCategoryForm> {
           child: Chip(
             label: Container(
               width: 50,
-              height: 35,
+              height: 30,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
