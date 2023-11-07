@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:project_all_guide_front/ui/pages/where_guide/widgets/where_guide_detail_form.dart';
 
 import '../../../../data/model/where_guide.dart';
 import '../../components/floating_button.dart';
@@ -72,6 +73,16 @@ class _WhoGuideListFormState extends State<WhereGuideListForm> {
                     orderMenu_2: list[index].orderMenu_2,
                     orderMenu_3: list[index].orderMenu_3,
                     orderPrice: list[index].orderPrice,
+                    onDetailPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => WhereGuideDetailForm(
+                            selectedIndex: index, // 선택된 인덱스 전달
+                          ),
+                        ),
+                      );
+                    },
                   ),
                   childCount: list.length,
                 ),
