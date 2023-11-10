@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:kakao_flutter_sdk/kakao_flutter_sdk.dart';
 import 'package:logger/logger.dart';
 
 import '../../../../_core/constants/colors.dart';
@@ -74,8 +75,20 @@ class LoginForm extends ConsumerWidget {
             text: "카카오로 시작하기",
             imgUrl: "KakaoTalk.png",
             textColor: kKakaoColor,
-            press: () {
-              // Navigator.pushNamed(context, Move.loginPage);
+            press: () async {
+              // 카카오톡 실행 가능 여부 확인
+              // 카카오톡 실행이 가능하면 카카오톡으로 로그인, 아니면 카카오계정으로 로그인
+              if (await isKakaoTalkInstalled()) {
+                print("카카오톡이 설치되어 있습니다.");
+                await UserApi.instance.loginWithKakaoTalk();
+              } else {
+                print("카카오톡이 설치되어 있지 않습니다.");
+                OAuthToken oauthToken =
+                    await UserApi.instance.loginWithKakaoAccount();
+                print(oauthToken.accessToken); //accessToken을 스프링 서버에 주면됨
+                print(oauthToken.expiresAt);
+                print(oauthToken.scopes![0]);
+              }
             },
           ),
         ],
